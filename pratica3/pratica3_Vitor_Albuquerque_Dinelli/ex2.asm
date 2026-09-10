@@ -1,6 +1,6 @@
 .data
-msgNum: .asciiz "Digite um número: "
-msgResposta: .asciiz "O resultado é: "
+msgNum: .asciiz "Digite um nÃºmero: "
+msgResposta: .asciiz "O resultado Ã©: "
 .text
 
 #printar a msg
@@ -35,7 +35,7 @@ syscall
 
 f:	#valor de entrada em $a0
 	
-	#testar se é o caso base
+	#testar se ï¿½ o caso base
 	addi $t0, $zero, 4
 	slt $t0, $a0, $t0
 	bne $t0, $zero, base
