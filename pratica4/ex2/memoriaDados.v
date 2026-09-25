@@ -11,19 +11,19 @@ module memoriaDados #(
 
 	reg [7:0] memory [0:(1<<ADDR_SIZE)-1]; //faz 2 elevado ao tamanho do endereço
 	
+	integer i;
 	always @(posedge clock) begin
 		if(memWrite) begin
-			integer i;
 			for(i = 0; i < DATA_BYTES; i = i + 1)begin //salva byte por byte oq esta no writeData na memoria
 				memory[address + i] <= writeData[(i<<3) +: 8]; 
 			end
 		end
 	end
 	
-	genvar i;
+	genvar j;
 	generate
-		for(i = 0; i < DATA_BYTES; i = i + 1) begin : loop_leitura
-			assign readData[(i<<3) +: 8] = memRead ? memory[address + i] : 8'b0;
+		for(j = 0; j < DATA_BYTES; j = j + 1) begin : loop_leitura
+			assign readData[(j<<3) +: 8] = memRead ? memory[address + j] : 8'b0;
       end
    endgenerate
 	

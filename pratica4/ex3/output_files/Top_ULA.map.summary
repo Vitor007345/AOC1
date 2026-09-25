@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Thu Sep 24 20:48:48 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : Top_ULA
+Top-level Entity Name : ULA
+Family : MAX 10
+Total logic elements : 112
+    Total combinational functions : 112
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 101
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

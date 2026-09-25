@@ -1,10 +1,10 @@
 module ULA #(
-	parameter N = 32;
+	parameter N = 32
 )(
-	input [N-1:0] a, b;
-	input [2:0] ALUop;
-	output [N-1:0] result;
-	output overflow, zero;
+	input [N-1:0] a, b,
+	input [2:0] ALUop,
+	output [N-1:0] result,
+	output overflow, zero
 );
 	wire [N-1:0] b_mux, sum_result, slt_result, and_result, or_result;
 	wire cin, cout;
@@ -37,10 +37,10 @@ module ULA #(
    wire is_math =  ALUop[1] & ~ALUop[0]; 
    wire is_slt  =  ALUop[1] &  ALUop[0];
 	
-	assign result = ( out_and    & {N{is_and}}  ) | 
-                    ( out_or     & {N{is_or}}   ) | 
+	assign result = ( and_result    & {N{is_and}}  ) | 
+                    ( or_result     & {N{is_or}}   ) | 
                     ( sum_result & {N{is_math}} ) | 
-                    ( out_slt    & {N{is_slt}}  );
+                    ( slt_result    & {N{is_slt}}  );
 	
 	assign zero = ~|result;
 	
