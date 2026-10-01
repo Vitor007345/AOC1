@@ -1,0 +1,79 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/oem/Documentos/AOC/AOC1/pratica4/ex2/simulation/questa
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1790863399
+Vd1Yze_nFMmU>QlCi287`@3
+04 15 4 work tb_memoriaDados fast 0
+=1-f4b520432843-6abe6827-b014f-25dc
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+vmemoriaDados
+2/home/oem/Documentos/AOC/AOC1/pratica4/ex2/memoriaDados.v
+R2
+!i10b 1
+!s100 S_]>7Bd3K;MHhXXC0DRVP3
+IJje0=WE^ObgM8Um>Kz44:0
+R1
+w1790303019
+8/home/oem/Documentos/AOC/AOC1/pratica4/ex2/memoriaDados.v
+F/home/oem/Documentos/AOC/AOC1/pratica4/ex2/memoriaDados.v
+!i122 0
+L0 1 31
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z6 !s108 1790863399.000000
+!s107 /home/oem/Documentos/AOC/AOC1/pratica4/ex2/memoriaDados.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica4/ex2|/home/oem/Documentos/AOC/AOC1/pratica4/ex2/memoriaDados.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica4/ex2 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+nmemoria@dados
+vtb_memoriaDados
+2/home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v
+R2
+!i10b 1
+!s100 M0^Kifz@GBofJVChNd<l;0
+Inj<a0_oVUZEkOa_PVaB@e0
+R1
+w1790301114
+8/home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v
+F/home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v
+!i122 1
+L0 2 92
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica4/ex2|/home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v|
+!i113 0
+R7
+R8
+R3
+ntb_memoria@dados
