@@ -1,0 +1,18 @@
+-- begin_signature
+-- bancoDeReg(ADDR_WIDTH
+-- 2
+-- REG_WIDTH
+-- 3)
+-- end_signature
+WIDTH=3;
+DEPTH=4;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	3 :	000;
+	2 :	000;
+	1 :	000;
+	0 :	000;
+END;
