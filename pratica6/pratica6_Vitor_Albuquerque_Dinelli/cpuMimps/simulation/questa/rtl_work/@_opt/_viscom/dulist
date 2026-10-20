@@ -1,0 +1,12 @@
+1 7 somador 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 28 0
+1 14 parameterAdder 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 500 0
+1 2 PC 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 35 0
+1 12 memoriaDados 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 144 0
+1 17 memoriaInstrucoes 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 93 0
+1 3 mux 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 24 0
+1 10 bancoDeReg 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 86 0
+1 13 extensorSinal 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 31 0
+1 3 mux 7 fast__1 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 24 0
+1 3 ULA 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 171 0
+1 8 cpuMimps 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 0 0 102 0
+1 11 tb_cpuMimps 4 fast 74 /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/simulation/questa/rtl_work 0 0 180224 0 373 0

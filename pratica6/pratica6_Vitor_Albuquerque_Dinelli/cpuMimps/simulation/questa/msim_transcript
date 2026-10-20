@@ -1,0 +1,255 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do cpuMimps_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work rtl_work 
+# ** Note: (vmap-220) '/home/oem/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Copying /home/oem/altera_lite/25.1std/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/memoriaDados.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:24 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/memoriaDados.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module memoriaDados
+# 
+# Top level modules:
+# 	memoriaDados
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/ULA.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/ULA.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module ULA
+# 
+# Top level modules:
+# 	ULA
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/somador.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/somador.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module somador
+# 
+# Top level modules:
+# 	somador
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/parameterAdder.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/parameterAdder.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module parameterAdder
+# 
+# Top level modules:
+# 	parameterAdder
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/extensorSinal.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/extensorSinal.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module extensorSinal
+# 
+# Top level modules:
+# 	extensorSinal
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/decodificador.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/decodificador.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module decodificador
+# 
+# Top level modules:
+# 	decodificador
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/bancoDeReg.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/bancoDeReg.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module bancoDeReg
+# 
+# Top level modules:
+# 	bancoDeReg
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/PC.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/PC.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/mux.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/mux.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module mux
+# 
+# Top level modules:
+# 	mux
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/cpuMimps.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/cpuMimps.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module cpuMimps
+# 
+# Top level modules:
+# 	cpuMimps
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/memoriaInstrucoes.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/memoriaInstrucoes.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module memoriaInstrucoes
+# 
+# Top level modules:
+# 	memoriaInstrucoes
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/bin2bcd.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/bin2bcd.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module bin2bcd
+# 
+# Top level modules:
+# 	bin2bcd
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/debounce.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/debounce.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module debounce
+# 
+# Top level modules:
+# 	debounce
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/Top_cpu.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/Top_cpu.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module Top_cpu
+# 
+# Top level modules:
+# 	Top_cpu
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog  -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps {/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/tb_cpuMimps.v}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 18:15:25 on Oct 15,2026
+# vlog -reportprogress 300 -work work "+incdir+/home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps" /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/tb_cpuMimps.v 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling module tb_cpuMimps
+# 
+# Top level modules:
+# 	tb_cpuMimps
+# End time: 18:15:25 on Oct 15,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  tb_cpuMimps
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" tb_cpuMimps 
+# Start time: 18:15:26 on Oct 15,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb_cpuMimps(fast)
+# Loading work.cpuMimps(fast)
+# Loading work.parameterAdder(fast)
+# Loading work.somador(fast)
+# Loading work.PC(fast)
+# Loading work.memoriaInstrucoes(fast)
+# Loading work.memoriaDados(fast)
+# Loading work.mux(fast)
+# Loading work.bancoDeReg(fast)
+# Loading work.extensorSinal(fast)
+# Loading work.mux(fast__1)
+# Loading work.ULA(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# [16000] OK   ready apos carga = 0x00000001
+# --- Instrucao 1: addi $t0,$zero,5 ---
+# [21000] OK   PC = 0x00000000
+# [21000] OK   instruction = 0x20080005
+# [21000] OK   Data1 (rs) = 0x00000000
+# [21000] OK   ALUb (imm) = 0x00000005
+# [21000] OK   ALUResult = 0x00000005
+# [21000] OK   zero = 0x00000000
+# [26000] OK   $t0 gravado = 0x00000005
+# [26000] OK   PC prox = 0x00000004
+# --- Instrucao 2: add $t1,$t0,$t0 ---
+# [27000] OK   PC = 0x00000004
+# [27000] OK   instruction = 0x01084820
+# [27000] OK   Data1 (rs) = 0x00000005
+# [27000] OK   Data2 (rt) = 0x00000005
+# [27000] OK   ALUb = 0x00000005
+# [27000] OK   ALUResult = 0x0000000a
+# [36000] OK   $t1 gravado = 0x0000000a
+# [36000] OK   PC prox = 0x00000008
+# --- PC=8: memoria vazia (instrucao 0x00000000) ---
+# [41000] OK   instruction = 0x00000000
+# --- Reset: PC volta a 0 e instrucoes continuam na memoria ---
+# [51000] OK   PC apos reset = 0x00000000
+# [51000] OK   ready = 0x00000001
+# [51000] OK   instruction = 0x20080005
+# [66000] OK   PC apos reset liberado = 0x00000004
+# 
+# *** TODOS OS TESTES PASSARAM ***
+# ** Note: $stop    : /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/tb_cpuMimps.v(122)
+#    Time: 86 ns  Iteration: 0  Instance: /tb_cpuMimps
+# Break in Module tb_cpuMimps at /home/oem/Documentos/AOC/AOC1/pratica6/cpuMimps/tb_cpuMimps.v line 122
+# 
+# stdin: <EOF>
+# End time: 18:15:54 on Oct 15,2026, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 1

@@ -70,3 +70,6 @@
 # Break in Module tb_memoriaDados at /home/oem/Documentos/AOC/AOC1/pratica4/ex2/tb_memoriaDados.v line 90
 # 
 # stdin: <EOF>
+# dbinfo_cache_find(): INTERNAL ERROR: Cannot create directory /home/oem/Documentos/AOC/AOC1/pratica4/ex2/simulation/questa/rtl_work
+# End time: 11:44:18 on Oct 01,2026, Elapsed time: 0:40:59
+# Errors: 0, Warnings: 1

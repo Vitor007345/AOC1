@@ -1,0 +1,125 @@
+`timescale 1ns/1ps
+
+// Testbench da Pratica 6 - cpuMimps
+// Instrucao 1: addi $t0,$zero,5  (0x20080005) -> usa sinal estendido (ALUSrc=1, RegDst=0)
+// Instrucao 2: add  $t1,$t0,$t0  (0x01084820) -> usa readdata2       (ALUSrc=0, RegDst=1)
+
+module tb_cpuMimps;
+
+	reg clock, reset, RegDst, RegWrite, ALUSrc;
+	reg [2:0] ALUop;
+
+	wire [31:0] PCatual, instruction, Data1, Data2, ALUb, ALUResult;
+	wire zero, ready;
+
+	integer erros = 0;
+
+	cpuMimps dut (
+		.clock(clock),
+		.reset(reset),
+		.RegDst(RegDst),
+		.RegWrite(RegWrite),
+		.ALUSrc(ALUSrc),
+		.ALUop(ALUop),
+		.PCatual(PCatual),
+		.instruction(instruction),
+		.Data1(Data1),
+		.Data2(Data2),
+		.ALUb(ALUb),
+		.ALUResult(ALUResult),
+		.zero(zero),
+		.ready(ready)
+	);
+
+	// clock de periodo 10 ns (borda de subida em 5, 15, 25...)
+	always #5 clock = ~clock;
+
+	// compara um valor obtido com o esperado e conta erros
+	task check(input [255:0] nome, input [31:0] obtido, input [31:0] esperado);
+		begin
+			if (obtido === esperado)
+				$display("[%0t] OK   %0s = 0x%08h", $time, nome, obtido);
+			else begin
+				$display("[%0t] ERRO %0s = 0x%08h (esperado 0x%08h)", $time, nome, obtido, esperado);
+				erros = erros + 1;
+			end
+		end
+	endtask
+
+	initial begin
+		// valores iniciais (controles da instrucao: addi)
+		clock    = 0;
+		reset    = 1;
+		RegDst   = 0;
+		ALUSrc   = 1;
+		RegWrite = 1;
+		ALUop    = 3'b010;   // soma
+
+		// ---------- carga das instrucoes (2 clocks) ----------
+		@(posedge clock);
+		@(posedge clock);
+		#1 check("ready apos carga", ready, 1);
+
+		// libera o reset longe da borda de subida
+		@(negedge clock);
+		reset = 0;
+
+		// ---------- INSTRUCAO 1: addi $t0,$zero,5 ----------
+		#1;
+		$display("--- Instrucao 1: addi $t0,$zero,5 ---");
+		check("PC",          PCatual,     32'h00000000);
+		check("instruction", instruction, 32'h20080005);
+		check("Data1 (rs)",  Data1,       32'd0);
+		check("ALUb (imm)",  ALUb,        32'd5);
+		check("ALUResult",   ALUResult,   32'd5);
+		check("zero",        zero,        32'd0);
+
+		@(posedge clock); #1;
+		check("$t0 gravado",  dut.bancoReg.banco[8], 32'd5);
+		check("PC prox",      PCatual,               32'd4);
+
+		// ---------- INSTRUCAO 2: add $t1,$t0,$t0 ----------
+		RegDst = 1;          // destino = rd
+		ALUSrc = 0;          // segundo operando = readdata2
+		#1;
+		$display("--- Instrucao 2: add $t1,$t0,$t0 ---");
+		check("PC",          PCatual,     32'd4);
+		check("instruction", instruction, 32'h01084820);
+		check("Data1 (rs)",  Data1,       32'd5);
+		check("Data2 (rt)",  Data2,       32'd5);
+		check("ALUb",        ALUb,        32'd5);
+		check("ALUResult",   ALUResult,   32'd10);
+
+		@(posedge clock); #1;
+		check("$t1 gravado",  dut.bancoReg.banco[9], 32'd10);
+		check("PC prox",      PCatual,               32'd8);
+
+		// ---------- para de escrever e mostra o fim do programa ----------
+		@(negedge clock);
+		RegWrite = 0;
+		#1;
+		$display("--- PC=8: memoria vazia (instrucao 0x00000000) ---");
+		check("instruction", instruction, 32'h00000000);
+
+		// ---------- reset: PC volta a 0 sem recarregar a memoria ----------
+		@(negedge clock);
+		reset = 1;
+		#1;
+		$display("--- Reset: PC volta a 0 e instrucoes continuam na memoria ---");
+		check("PC apos reset", PCatual,     32'd0);
+		check("ready",         ready,       32'd1);
+		check("instruction",   instruction, 32'h20080005);
+
+		@(negedge clock);
+		reset = 0;
+		@(posedge clock); #1;
+		check("PC apos reset liberado", PCatual, 32'd4);
+
+		// ---------- resumo ----------
+		#20;
+		if (erros == 0) $display("\n*** TODOS OS TESTES PASSARAM ***");
+		else            $display("\n*** %0d ERRO(S) ENCONTRADO(S) ***", erros);
+		$stop;
+	end
+
+endmodule

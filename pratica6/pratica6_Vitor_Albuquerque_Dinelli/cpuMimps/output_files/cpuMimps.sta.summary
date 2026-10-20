@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'debounce:db|clean'
+Slack : -17.224
+TNS   : -876.369
+
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
+Slack : -3.476
+TNS   : -64.899
+
+Type  : Slow 1200mV 85C Model Hold 'debounce:db|clean'
+Slack : 0.218
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
+Slack : 0.427
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'debounce:db|clean'
+Slack : -1.303
+TNS   : -32.205
+
+Type  : Slow 1200mV 85C Model Removal 'debounce:db|clean'
+Slack : 1.324
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -35.269
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce:db|clean'
+Slack : -1.403
+TNS   : -137.494
+
+Type  : Slow 1200mV 0C Model Setup 'debounce:db|clean'
+Slack : -15.572
+TNS   : -797.789
+
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -3.144
+TNS   : -59.086
+
+Type  : Slow 1200mV 0C Model Hold 'debounce:db|clean'
+Slack : 0.202
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.394
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'debounce:db|clean'
+Slack : -1.122
+TNS   : -27.283
+
+Type  : Slow 1200mV 0C Model Removal 'debounce:db|clean'
+Slack : 1.185
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -35.269
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce:db|clean'
+Slack : -1.403
+TNS   : -137.494
+
+Type  : Fast 1200mV 0C Model Setup 'debounce:db|clean'
+Slack : -6.432
+TNS   : -313.385
+
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -0.962
+TNS   : -18.072
+
+Type  : Fast 1200mV 0C Model Hold 'debounce:db|clean'
+Slack : 0.071
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'debounce:db|clean'
+Slack : -0.012
+TNS   : -0.072
+
+Type  : Fast 1200mV 0C Model Removal 'debounce:db|clean'
+Slack : 0.597
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -26.824
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce:db|clean'
+Slack : -1.000
+TNS   : -98.000
+
+------------------------------------------------------------
