@@ -1,0 +1,399 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/simulation/questa
+T_opt
+!i145 1
+!i144 0
+!s110 1792686001
+VfoMCTYj07Z?G3GABH<ES63
+04 15 4 work tb_cpuMimps_add fast 0
+=1-f4b520432843-6ada37af-dfd38-357d1
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U108 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+vbancoDeReg
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v
+Z3 !s110 1792685999
+!i10b 1
+!s100 ;bKn5n1k3o]WncnN1`_oZ2
+IJCX7=0jn94HF[kkig;m<`2
+R1
+w1792664980
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v
+!i122 5
+L0 1 45
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z6 !s108 1792685999.000000
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v|
+!i113 0
+Z7 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 !s92 -work work +incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+nbanco@de@reg
+vbin2bcd
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v
+R3
+!i10b 1
+!s100 PYl:f[DjE_[nniDoLJJ?d3
+I8OMT9T0;E@zSmMQ?5M_CC0
+R1
+w1792096996
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v
+!i122 9
+L0 4 22
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v|
+!i113 0
+R7
+R8
+R2
+vcontrol
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v
+R3
+!i10b 1
+!s100 W37B1oDBM^Z>zdTT2==6R0
+I3maF=Y@bUmn[RIaY<T4fA1
+R1
+w1792591999
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v
+!i122 13
+L0 2 25
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v|
+!i113 0
+R7
+R8
+R2
+vcpuMimps
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v
+R3
+!i10b 1
+!s100 ;HgiMhDImMfji79`Y<9eS2
+IbgEFkUB6OGD>39Z>CzdIk1
+R1
+w1792595255
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v
+!i122 7
+L0 1 125
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v|
+!i113 0
+R7
+R8
+R2
+ncpu@mimps
+vdebounce
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v
+R3
+!i10b 1
+!s100 [F<f88SdZcV:MoH_<TES]3
+I>h:UMk8>obZE9@O>ZMF1E2
+R1
+w1792097051
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v
+!i122 10
+L0 4 19
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v|
+!i113 0
+R7
+R8
+R2
+vdecodificador
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v
+R3
+!i10b 1
+!s100 PAQK6_]U]gKDfU8e3lE2d3
+IH3XkPl1DI`dUHD6XaLhF@0
+R1
+Z9 w1791574376
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v
+!i122 4
+L0 1 13
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v|
+!i113 0
+R7
+R8
+R2
+vextensorSinal
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v
+R3
+!i10b 1
+!s100 `AWGKBW<>n2kDA@jL56mG3
+I0QBP:2:fF_VJ8X1i7a=Qm0
+R1
+R9
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v
+!i122 3
+L0 1 10
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v|
+!i113 0
+R7
+R8
+R2
+nextensor@sinal
+vmemoriaInstrucoes
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v
+R3
+!i10b 1
+!s100 a?[KCXf4zzPd^U0a<Gm_Z1
+IDUAFd`;T0j^C3cY@0XEJ:3
+R1
+w1792593168
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v
+!i122 8
+L0 1 38
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v|
+!i113 0
+R7
+R8
+R2
+nmemoria@instrucoes
+vparameterAdder
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v
+R3
+!i10b 1
+!s100 B3GA=XUN8o4JVSb@FVQ:40
+IKDBl@3:`03`c63dl8>2_<0
+R1
+R9
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v
+!i122 2
+L0 1 28
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v|
+!i113 0
+R7
+R8
+R2
+nparameter@adder
+vPC
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v
+R3
+!i10b 1
+!s100 ?Eke:`53B9R;[hfnX2eVJ0
+IJ]7RbhK=fOQ7Aca;U59hj0
+R1
+w1791766107
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v
+!i122 6
+L0 1 20
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v|
+!i113 0
+R7
+R8
+R2
+n@p@c
+vsomador
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v
+R3
+!i10b 1
+!s100 I?87aH_keXdZ_j=mN]XYG0
+I9TH8_BO>Sc4=n=7RQd6in2
+R1
+R9
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v
+!i122 1
+L0 1 9
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v|
+!i113 0
+R7
+R8
+R2
+vtb_cpuMimps_add
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps_add.v
+R3
+!i10b 1
+!s100 WE]_Lc?mP04`YlAYMa[J_2
+IcAVf3O0a_E^hBOGRzPn6A3
+R1
+w1792685805
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps_add.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps_add.v
+!i122 14
+L0 6 62
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps_add.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps_add.v|
+!i113 0
+R7
+R8
+R2
+ntb_cpu@mimps_add
+vTop_cpu
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v
+R3
+!i10b 1
+!s100 bo;A]J`G:QI@=n0ePPYO73
+I0dzn<8O_iggh=jlTN995<0
+R1
+w1792673276
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v
+!i122 11
+L0 34 142
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v|
+!i113 0
+R7
+R8
+R2
+n@top_cpu
+vULA
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v
+R3
+!i10b 1
+!s100 _?SohDL0LRZzm99UAMI[=3
+Ib6A2@be0Ezg];;oil6k8m3
+R1
+R9
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v
+!i122 0
+L0 1 49
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v|
+!i113 0
+R7
+R8
+R2
+n@u@l@a
+vULActrl
+2/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v
+R3
+!i10b 1
+!s100 ;>@COk8E0U8aL^eKhV;d]2
+IJ^z<Yknk@J@iUSDDcS:Lo2
+R1
+w1792545400
+8/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v
+F/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v
+!i122 12
+L0 2 9
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v|
+!s90 -reportprogress|300|-work|work|+incdir+/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps|/home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v|
+!i113 0
+R7
+R8
+R2
+n@u@l@actrl

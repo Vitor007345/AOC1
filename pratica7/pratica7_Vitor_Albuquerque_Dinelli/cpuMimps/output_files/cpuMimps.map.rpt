@@ -1,0 +1,1374 @@
+Analysis & Synthesis report for cpuMimps
+Thu Oct 22 10:53:16 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: cpuMimps:cpu|parameterAdder:somadorPC
+ 12. Parameter Settings for User Entity Instance: cpuMimps:cpu|parameterAdder:somadorPCbeq
+ 13. Parameter Settings for User Entity Instance: cpuMimps:cpu|PC:pc
+ 14. Parameter Settings for User Entity Instance: cpuMimps:cpu|memoriaInstrucoes:memoriaInst
+ 15. Parameter Settings for User Entity Instance: cpuMimps:cpu|bancoDeReg:bancoReg
+ 16. Parameter Settings for User Entity Instance: cpuMimps:cpu|extensorSinal:signex
+ 17. Parameter Settings for User Entity Instance: cpuMimps:cpu|ULA:alu
+ 18. Parameter Settings for User Entity Instance: cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 23. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 24. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 25. Port Connectivity Checks: "cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst"
+ 26. Port Connectivity Checks: "cpuMimps:cpu|ULA:alu"
+ 27. Port Connectivity Checks: "cpuMimps:cpu|parameterAdder:somadorPCbeq"
+ 28. Port Connectivity Checks: "cpuMimps:cpu|parameterAdder:somadorPC"
+ 29. Port Connectivity Checks: "cpuMimps:cpu"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Oct 22 10:53:16 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; cpuMimps                                        ;
+; Top-level Entity Name              ; Top_cpu                                         ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 1,707                                           ;
+;     Total combinational functions  ; 1,232                                           ;
+;     Dedicated logic registers      ; 565                                             ;
+; Total registers                    ; 565                                             ;
+; Total pins                         ; 71                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; Top_cpu            ; cpuMimps           ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+; ULA.v                            ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v                             ;         ;
+; somador.v                        ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v                         ;         ;
+; parameterAdder.v                 ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v                  ;         ;
+; extensorSinal.v                  ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v                   ;         ;
+; decodificador.v                  ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v                   ;         ;
+; bancoDeReg.v                     ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v                      ;         ;
+; PC.v                             ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v                              ;         ;
+; cpuMimps.v                       ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v                        ;         ;
+; memoriaInstrucoes.v              ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v               ;         ;
+; bin2bcd.v                        ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v                         ;         ;
+; debounce.v                       ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v                        ;         ;
+; Top_cpu.v                        ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v                         ;         ;
+; ULActrl.v                        ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v                         ;         ;
+; control.v                        ; yes             ; User Verilog HDL File        ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v                         ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/oem/altera_lite/25.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/oem/altera_lite/25.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/oem/altera_lite/25.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal251.inc                   ; yes             ; Megafunction                 ; /home/oem/altera_lite/25.1std/quartus/libraries/megafunctions/aglobal251.inc      ;         ;
+; db/lpm_divide_9kl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/lpm_divide_9kl.tdf             ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/sign_div_unsign_8kh.tdf        ;         ;
+; db/alt_u_div_qee.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf              ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/add_sub_t3c.tdf                ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/add_sub_u3c.tdf                ;         ;
+; db/lpm_divide_6sl.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/lpm_divide_6sl.tdf             ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 1,707             ;
+;                                             ;                   ;
+; Total combinational functions               ; 1232              ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 927               ;
+;     -- 3 input functions                    ; 170               ;
+;     -- <=2 input functions                  ; 135               ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 1153              ;
+;     -- arithmetic mode                      ; 79                ;
+;                                             ;                   ;
+; Total registers                             ; 565               ;
+;     -- Dedicated logic registers            ; 565               ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 71                ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; debounce:db|clean ;
+; Maximum fan-out                             ; 545               ;
+; Total fan-out                               ; 6266              ;
+; Average fan-out                             ; 3.23              ;
++---------------------------------------------+-------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                      ; Entity Name         ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |Top_cpu                                      ; 1232 (338)          ; 565 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 71   ; 0            ; 0          ; |Top_cpu                                                                                                 ; Top_cpu             ; work         ;
+;    |bin2bcd:conv|                             ; 147 (147)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|bin2bcd:conv                                                                                    ; bin2bcd             ; work         ;
+;    |cpuMimps:cpu|                             ; 635 (32)            ; 542 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu                                                                                    ; cpuMimps            ; work         ;
+;       |PC:pc|                                 ; 30 (30)             ; 30 (30)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|PC:pc                                                                              ; PC                  ; work         ;
+;       |ULA:alu|                               ; 136 (78)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu                                                                            ; ULA                 ; work         ;
+;          |parameterAdder:soma_inst|           ; 58 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst                                                   ; parameterAdder      ; work         ;
+;             |somador:gen_adder[0].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[0].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[10].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[10].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[11].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[11].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[12].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[12].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[13].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[13].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[14].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[14].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[15].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[15].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[16].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[16].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[17].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[17].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[18].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[18].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[19].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[19].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[1].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[1].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[20].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[20].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[21].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[21].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[22].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[22].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[23].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[23].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[24].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[24].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[25].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[25].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[26].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[26].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[27].AdderInst| ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[27].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[28].AdderInst| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[28].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[29].AdderInst| ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[29].AdderInst                   ; somador             ; work         ;
+;             |somador:gen_adder[2].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[2].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[3].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[3].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[4].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[4].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[5].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[5].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[6].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[6].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[7].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[7].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[8].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[8].AdderInst                    ; somador             ; work         ;
+;             |somador:gen_adder[9].AdderInst|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst|somador:gen_adder[9].AdderInst                    ; somador             ; work         ;
+;       |ULActrl:aluctrl|                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|ULActrl:aluctrl                                                                    ; ULActrl             ; work         ;
+;       |bancoDeReg:bancoReg|                   ; 413 (413)           ; 512 (512)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|bancoDeReg:bancoReg                                                                ; bancoDeReg          ; work         ;
+;       |memoriaInstrucoes:memoriaInst|         ; 13 (13)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|memoriaInstrucoes:memoriaInst                                                      ; memoriaInstrucoes   ; work         ;
+;       |parameterAdder:somadorPC|              ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC                                                           ; parameterAdder      ; work         ;
+;          |somador:gen_adder[11].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[11].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[14].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[14].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[17].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[17].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[20].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[20].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[23].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[23].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[26].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[26].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[29].AdderInst|    ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[29].AdderInst                           ; somador             ; work         ;
+;          |somador:gen_adder[5].AdderInst|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[5].AdderInst                            ; somador             ; work         ;
+;          |somador:gen_adder[8].AdderInst|     ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[8].AdderInst                            ; somador             ; work         ;
+;    |debounce:db|                              ; 29 (29)             ; 23 (23)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|debounce:db                                                                                     ; debounce            ; work         ;
+;    |decodificador:dec[0].d|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|decodificador:dec[0].d                                                                          ; decodificador       ; work         ;
+;    |decodificador:dec[1].d|                   ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|decodificador:dec[1].d                                                                          ; decodificador       ; work         ;
+;    |decodificador:dec[2].d|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|decodificador:dec[2].d                                                                          ; decodificador       ; work         ;
+;    |decodificador:dec[3].d|                   ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|decodificador:dec[3].d                                                                          ; decodificador       ; work         ;
+;    |decodificador:dec[4].d|                   ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|decodificador:dec[4].d                                                                          ; decodificador       ; work         ;
+;    |lpm_divide:Div0|                          ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6sl:auto_generated|         ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Div1|                          ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6sl:auto_generated|         ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div1|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div1|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div1|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Div2|                          ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6sl:auto_generated|         ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div2|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 3 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div2|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Div2|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Mod0|                          ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_9kl:auto_generated|         ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod0|lpm_divide_9kl:auto_generated                                                   ; lpm_divide_9kl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 14 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 14 (14)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Mod1|                          ; 15 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_9kl:auto_generated|         ; 15 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod1|lpm_divide_9kl:auto_generated                                                   ; lpm_divide_9kl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 15 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod1|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod1|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Mod2|                          ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_9kl:auto_generated|         ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod2|lpm_divide_9kl:auto_generated                                                   ; lpm_divide_9kl      ; work         ;
+;          |sign_div_unsign_8kh:divider|        ; 4 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod2|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|           ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Top_cpu|lpm_divide:Mod2|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                      ;
++---------------------------------------------+-------------------------------------------+
+; Register name                               ; Reason for Removal                        ;
++---------------------------------------------+-------------------------------------------+
+; cpuMimps:cpu|PC:pc|PCatual[0]               ; Merged with cpuMimps:cpu|PC:pc|PCatual[1] ;
+; cpuMimps:cpu|PC:pc|PCatual[1]               ; Stuck at GND due to stuck port data_in    ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~128  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~129  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~130  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~131  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~132  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~133  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~134  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~135  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~136  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~137  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~138  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~139  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~140  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~141  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~142  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~143  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~144  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~145  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~146  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~147  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~148  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~149  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~150  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~151  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~152  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~153  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~154  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~155  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~156  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~157  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~158  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~159  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~160  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~161  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~162  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~163  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~164  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~165  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~166  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~167  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~168  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~169  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~170  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~171  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~172  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~173  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~174  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~175  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~176  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~177  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~178  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~179  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~180  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~181  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~182  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~183  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~184  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~185  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~186  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~187  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~188  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~189  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~190  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~191  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~192  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~193  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~194  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~195  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~196  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~197  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~198  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~199  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~200  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~201  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~202  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~203  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~204  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~205  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~206  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~207  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~208  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~209  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~210  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~211  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~212  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~213  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~214  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~215  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~216  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~217  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~218  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~219  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~220  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~221  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~222  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~223  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~224  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~225  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~226  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~227  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~228  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~229  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~230  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~231  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~232  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~233  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~234  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~235  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~236  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~237  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~238  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~239  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~240  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~241  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~242  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~243  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~244  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~245  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~246  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~247  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~248  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~249  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~250  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~251  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~252  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~253  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~254  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~255  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~384  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~385  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~386  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~387  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~388  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~389  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~390  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~391  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~392  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~393  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~394  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~395  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~396  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~397  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~398  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~399  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~400  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~401  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~402  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~403  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~404  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~405  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~406  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~407  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~408  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~409  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~410  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~411  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~412  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~413  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~414  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~415  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~416  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~417  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~418  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~419  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~420  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~421  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~422  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~423  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~424  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~425  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~426  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~427  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~428  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~429  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~430  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~431  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~432  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~433  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~434  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~435  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~436  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~437  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~438  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~439  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~440  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~441  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~442  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~443  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~444  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~445  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~446  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~447  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~448  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~449  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~450  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~451  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~452  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~453  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~454  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~455  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~456  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~457  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~458  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~459  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~460  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~461  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~462  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~463  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~464  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~465  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~466  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~467  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~468  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~469  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~470  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~471  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~472  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~473  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~474  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~475  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~476  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~477  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~478  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~479  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~480  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~481  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~482  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~483  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~484  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~485  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~486  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~487  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~488  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~489  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~490  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~491  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~492  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~493  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~494  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~495  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~496  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~497  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~498  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~499  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~500  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~501  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~502  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~503  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~504  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~505  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~506  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~507  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~508  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~509  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~510  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~511  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~640  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~641  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~642  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~643  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~644  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~645  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~646  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~647  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~648  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~649  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~650  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~651  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~652  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~653  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~654  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~655  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~656  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~657  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~658  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~659  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~660  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~661  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~662  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~663  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~664  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~665  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~666  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~667  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~668  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~669  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~670  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~671  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~672  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~673  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~674  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~675  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~676  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~677  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~678  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~679  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~680  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~681  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~682  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~683  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~684  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~685  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~686  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~687  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~688  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~689  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~690  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~691  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~692  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~693  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~694  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~695  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~696  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~697  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~698  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~699  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~700  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~701  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~702  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~703  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~704  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~705  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~706  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~707  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~708  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~709  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~710  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~711  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~712  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~713  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~714  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~715  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~716  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~717  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~718  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~719  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~720  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~721  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~722  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~723  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~724  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~725  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~726  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~727  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~728  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~729  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~730  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~731  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~732  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~733  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~734  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~735  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~736  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~737  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~738  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~739  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~740  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~741  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~742  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~743  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~744  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~745  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~746  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~747  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~748  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~749  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~750  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~751  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~752  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~753  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~754  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~755  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~756  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~757  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~758  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~759  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~760  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~761  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~762  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~763  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~764  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~765  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~766  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~767  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~896  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~897  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~898  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~899  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~900  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~901  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~902  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~903  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~904  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~905  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~906  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~907  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~908  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~909  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~910  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~911  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~912  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~913  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~914  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~915  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~916  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~917  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~918  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~919  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~920  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~921  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~922  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~923  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~924  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~925  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~926  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~927  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~928  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~929  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~930  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~931  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~932  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~933  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~934  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~935  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~936  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~937  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~938  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~939  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~940  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~941  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~942  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~943  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~944  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~945  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~946  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~947  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~948  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~949  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~950  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~951  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~952  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~953  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~954  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~955  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~956  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~957  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~958  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~959  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~960  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~961  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~962  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~963  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~964  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~965  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~966  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~967  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~968  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~969  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~970  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~971  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~972  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~973  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~974  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~975  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~976  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~977  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~978  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~979  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~980  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~981  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~982  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~983  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~984  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~985  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~986  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~987  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~988  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~989  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~990  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~991  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~992  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~993  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~994  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~995  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~996  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~997  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~998  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~999  ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1000 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1001 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1002 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1003 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1004 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1005 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1006 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1007 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1008 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1009 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1010 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1011 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1012 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1013 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1014 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1015 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1016 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1017 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1018 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1019 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1020 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1021 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1022 ; Lost fanout                               ;
+; cpuMimps:cpu|bancoDeReg:bancoReg|banco~1023 ; Lost fanout                               ;
+; Total Number of Removed Registers = 514     ;                                           ;
++---------------------------------------------+-------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 565   ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 512   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_cpu|mag17[2]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top_cpu|n[22]             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX0              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX1              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX2              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX3              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX4              ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Top_cpu|HEX5              ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Top_cpu|n[3]              ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Top_cpu|n[7]              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_cpu|n[10]             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |Top_cpu|n[15]             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|n[18]             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Top_cpu|HEX5              ;
+; 16:1               ; 23 bits   ; 230 LEs       ; 115 LEs              ; 115 LEs                ; No         ; |Top_cpu|Mux8              ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 10 LEs               ; 6 LEs                  ; No         ; |Top_cpu|Mux17             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|parameterAdder:somadorPC ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|parameterAdder:somadorPCbeq ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|PC:pc ;
++-----------------+-------+---------------------------------------+
+; Parameter Name  ; Value ; Type                                  ;
++-----------------+-------+---------------------------------------+
+; ADDR_SIZE       ; 32    ; Signed Integer                        ;
+; INST_SIZE_BYTES ; 4     ; Signed Integer                        ;
++-----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|memoriaInstrucoes:memoriaInst ;
++----------------+----------------+-------------------------------------------------------+
+; Parameter Name ; Value          ; Type                                                  ;
++----------------+----------------+-------------------------------------------------------+
+; ADDR_SIZE      ; 8              ; Signed Integer                                        ;
+; DATA_BYTES     ; 4              ; Signed Integer                                        ;
+; FILE_NAME      ; instrucoes.txt ; String                                                ;
++----------------+----------------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|bancoDeReg:bancoReg ;
++----------------+-------------------+------------------------------------------+
+; Parameter Name ; Value             ; Type                                     ;
++----------------+-------------------+------------------------------------------+
+; ADDR_WIDTH     ; 5                 ; Signed Integer                           ;
+; REG_WIDTH      ; 32                ; Signed Integer                           ;
+; INIT_FILE      ; registradores.txt ; String                                   ;
++----------------+-------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|extensorSinal:signex ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; initialSize    ; 16    ; Signed Integer                                        ;
+; finalSize      ; 32    ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|ULA:alu ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; N              ; 32    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9kl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div2 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9kl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div1 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9kl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpuMimps:cpu|ULA:alu|parameterAdder:soma_inst"                                      ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpuMimps:cpu|ULA:alu"                                                                   ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; overflow ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "cpuMimps:cpu|parameterAdder:somadorPCbeq" ;
++---------+--------+----------+----------------------------------------+
+; Port    ; Type   ; Severity ; Details                                ;
++---------+--------+----------+----------------------------------------+
+; b[1..0] ; Input  ; Info     ; Stuck at GND                           ;
+; cin     ; Input  ; Info     ; Stuck at GND                           ;
+; cout    ; Output ; Info     ; Explicitly unconnected                 ;
++---------+--------+----------+----------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "cpuMimps:cpu|parameterAdder:somadorPC" ;
++----------+--------+----------+------------------------------------+
+; Port     ; Type   ; Severity ; Details                            ;
++----------+--------+----------+------------------------------------+
+; b[31..3] ; Input  ; Info     ; Stuck at GND                       ;
+; b[1..0]  ; Input  ; Info     ; Stuck at GND                       ;
+; b[2]     ; Input  ; Info     ; Stuck at VCC                       ;
+; cin      ; Input  ; Info     ; Stuck at GND                       ;
+; cout     ; Output ; Info     ; Explicitly unconnected             ;
++----------+--------+----------+------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cpuMimps:cpu"                                                                                     ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; instruction[10..6] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 71                          ;
+; cycloneiii_ff         ; 565                         ;
+;     CLR               ; 30                          ;
+;     ENA               ; 512                         ;
+;     SCLR              ; 20                          ;
+;     plain             ; 3                           ;
+; cycloneiii_lcell_comb ; 1238                        ;
+;     arith             ; 79                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 34                          ;
+;     normal            ; 1159                        ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 68                          ;
+;         3 data inputs ; 136                         ;
+;         4 data inputs ; 927                         ;
+;                       ;                             ;
+; Max LUT depth         ; 67.40                       ;
+; Average LUT depth     ; 46.13                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Thu Oct 22 10:53:06 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpuMimps -c cpuMimps
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file memoriaDados.v
+    Info (12023): Found entity 1: memoriaDados File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaDados.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ULA.v
+    Info (12023): Found entity 1: ULA File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULA.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file somador.v
+    Info (12023): Found entity 1: somador File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/somador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file parameterAdder.v
+    Info (12023): Found entity 1: parameterAdder File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file extensorSinal.v
+    Info (12023): Found entity 1: extensorSinal File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/extensorSinal.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decodificador.v
+    Info (12023): Found entity 1: decodificador File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/decodificador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bancoDeReg.v
+    Info (12023): Found entity 1: bancoDeReg File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file PC.v
+    Info (12023): Found entity 1: PC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/PC.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cpuMimps.v
+    Info (12023): Found entity 1: cpuMimps File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file memoriaInstrucoes.v
+    Info (12023): Found entity 1: memoriaInstrucoes File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tb_cpuMimps.v
+    Info (12023): Found entity 1: tb_cpuMimps File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_cpuMimps.v Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd.v
+    Info (12023): Found entity 1: bin2bcd File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bin2bcd.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file debounce.v
+    Info (12023): Found entity 1: debounce File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/debounce.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file Top_cpu.v
+    Info (12023): Found entity 1: Top_cpu File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 34
+Info (12021): Found 1 design units, including 1 entities, in source file ULActrl.v
+    Info (12023): Found entity 1: ULActrl File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/ULActrl.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file tb_ULActrl.v
+    Info (12023): Found entity 1: tb_ULActrl File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_ULActrl.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/control.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file tb_control.v
+    Info (12023): Found entity 1: tb_control File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/tb_control.v Line: 3
+Info (12127): Elaborating entity "Top_cpu" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Top_cpu.v(134): truncated value with size 32 to match size of target (4) File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 134
+Warning (10230): Verilog HDL assignment warning at Top_cpu.v(135): truncated value with size 32 to match size of target (4) File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+Warning (10230): Verilog HDL assignment warning at Top_cpu.v(136): truncated value with size 32 to match size of target (4) File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+Info (12128): Elaborating entity "debounce" for hierarchy "debounce:db" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 48
+Info (12128): Elaborating entity "cpuMimps" for hierarchy "cpuMimps:cpu" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 79
+Info (12128): Elaborating entity "parameterAdder" for hierarchy "cpuMimps:cpu|parameterAdder:somadorPC" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 22
+Info (12128): Elaborating entity "somador" for hierarchy "cpuMimps:cpu|parameterAdder:somadorPC|somador:gen_adder[0].AdderInst" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/parameterAdder.v Line: 24
+Info (12128): Elaborating entity "PC" for hierarchy "cpuMimps:cpu|PC:pc" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 46
+Info (12128): Elaborating entity "memoriaInstrucoes" for hierarchy "cpuMimps:cpu|memoriaInstrucoes:memoriaInst" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 56
+Warning (10850): Verilog HDL warning at memoriaInstrucoes.v(27): number of words (5) in memory file does not match the number of elements in the address range [0:63] File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/memoriaInstrucoes.v Line: 27
+Info (12128): Elaborating entity "control" for hierarchy "cpuMimps:cpu|control:ctrl" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 69
+Info (12128): Elaborating entity "bancoDeReg" for hierarchy "cpuMimps:cpu|bancoDeReg:bancoReg" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 90
+Info (12128): Elaborating entity "extensorSinal" for hierarchy "cpuMimps:cpu|extensorSinal:signex" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 100
+Info (12128): Elaborating entity "ULActrl" for hierarchy "cpuMimps:cpu|ULActrl:aluctrl" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 111
+Info (12128): Elaborating entity "ULA" for hierarchy "cpuMimps:cpu|ULA:alu" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/cpuMimps.v Line: 121
+Info (12128): Elaborating entity "bin2bcd" for hierarchy "bin2bcd:conv" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 112
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:dec[0].d" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 158
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "cpuMimps:cpu|bancoDeReg:bancoReg|banco" is uninferred because MIF is not supported for the selected family File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/bancoDeReg.v Line: 14
+Info (278001): Inferred 6 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 134
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 134
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9kl.tdf
+    Info (12023): Found entity 1: lpm_divide_9kl File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/lpm_divide_9kl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/sign_div_unsign_8kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qee.tdf
+    Info (12023): Found entity 1: alt_u_div_qee File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 136
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6sl.tdf
+    Info (12023): Found entity 1: lpm_divide_6sl File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/lpm_divide_6sl.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 135
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 38
+    Warning (13410): Pin "LEDR[3]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 38
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 38
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 38
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 38
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 39
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 39
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 39
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 39
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 39
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 40
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 512 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "lpm_divide:Mod1|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider|add_sub_4_result_int[0]~10" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf Line: 47
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider|add_sub_3_result_int[0]~6" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf Line: 42
+    Info (17048): Logic cell "lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider|add_sub_4_result_int[0]~10" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf Line: 47
+    Info (17048): Logic cell "lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider|add_sub_3_result_int[0]~6" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/db/alt_u_div_qee.tdf Line: 42
+Info (144001): Generated suppressed messages file /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/output_files/cpuMimps.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/Top_cpu.v Line: 37
+Info (21057): Implemented 1811 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 1740 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 24 warnings
+    Info: Peak virtual memory: 437 megabytes
+    Info: Processing ended: Thu Oct 22 10:53:16 2026
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:21
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/oem/Documentos/AOC/AOC1/pratica7/cpuMimps/output_files/cpuMimps.map.smsg.
+
+

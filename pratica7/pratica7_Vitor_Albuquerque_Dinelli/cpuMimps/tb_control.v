@@ -1,0 +1,62 @@
+`timescale 1ns/1ps
+
+module tb_control;
+
+    // Entradas do módulo (reg)
+    reg [5:0] Op;
+
+    // Saídas do módulo (wire)
+    wire RegDst;
+    wire ALUSrc;
+    wire MemtoReg;
+    wire RegWrite;
+    wire MemRead;
+    wire MemWrite;
+    wire Branch;
+    wire [1:0] ALUOp;
+
+    // Instanciação da Unidade de Controle
+    control uut (
+        .Op(Op),
+        .RegDst(RegDst),
+        .ALUSrc(ALUSrc),
+        .MemtoReg(MemtoReg),
+        .RegWrite(RegWrite),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .Branch(Branch),
+        .ALUOp(ALUOp)
+    );
+
+    initial begin
+        // Exibição formatada no console do simulador
+        $monitor("Tempo = %0t ns | Op = %b (%h) | RegDst=%b ALUSrc=%b MemtoReg=%b RegWrite=%b MemRead=%b MemWrite=%b Branch=%b ALUOp=%b", 
+                 $time, Op, Op, RegDst, ALUSrc, MemtoReg, RegWrite, MemRead, MemWrite, Branch, ALUOp);
+
+        $display("--- Iniciando Teste do Controle Principal ---");
+
+        // 1. Instrução Tipo R (Opcode = 000000)
+        // Esperado: RegDst=1, RegWrite=1, ALUOp=10
+        Op = 6'b000000; #10;
+
+        // 2. Instrução LW (Opcode = 100011 -> 0x23)
+        // Esperado: ALUSrc=1, MemtoReg=1, RegWrite=1, MemRead=1, ALUOp=00
+        Op = 6'b100011; #10;
+
+        // 3. Instrução SW (Opcode = 101011 -> 0x2B)
+        // Esperado: ALUSrc=1, MemWrite=1, ALUOp=00
+        Op = 6'b101011; #10;
+
+        // 4. Instrução BEQ (Opcode = 000100 -> 0x04)
+        // Esperado: Branch=1, ALUOp=01
+        Op = 6'b000100; #10;
+
+        // 5. Instrução ADDI (Opcode = 001000 -> 0x08)
+        // Esperado: ALUSrc=1, RegWrite=1, ALUOp=00 (RegDst=0, sem acesso à memória)
+        Op = 6'b001000; #10;
+
+        $display("--- Testes Concluídos ---");
+        $finish;
+    end
+
+endmodule
