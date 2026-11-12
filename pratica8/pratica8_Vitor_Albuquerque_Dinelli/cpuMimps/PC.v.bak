@@ -1,0 +1,7 @@
+module PC #(
+	parameter ADDR_SIZE = 32
+)(
+	input clock,
+	input [ADDR_SIZE-1:0] addrInstruc;
+	output [ADDR_SIZE-1:0] nextAddrInstruc;
+);
